@@ -23,6 +23,6 @@
 hs_err_pid*
 
 
+# Intellij project files
+*.iml
 .idea
-
-
