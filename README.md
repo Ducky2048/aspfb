@@ -1,3 +1,3 @@
-# aspfb
+# AbstractSingletonProxyFactoryBean
 
 lol generics
