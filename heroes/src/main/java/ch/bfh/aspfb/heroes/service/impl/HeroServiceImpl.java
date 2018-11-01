@@ -1,9 +1,9 @@
-package ch.bfh.aspfb.services.impl;
+package ch.bfh.aspfb.heroes.service.impl;
 
 
-import ch.bfh.aspfb.model.Hero;
-import ch.bfh.aspfb.repository.HeroRepository;
-import ch.bfh.aspfb.service.HeroService;
+import ch.bfh.aspfb.heroes.model.Hero;
+import ch.bfh.aspfb.heroes.repository.HeroRepository;
+import ch.bfh.aspfb.heroes.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +13,12 @@ import java.util.Random;
 public class HeroServiceImpl implements HeroService {
     private Random random = new Random();
 
+    private final HeroRepository heroRepository;
+
     @Autowired
-    private HeroRepository heroRepository;
+    public HeroServiceImpl(HeroRepository heroRepository) {
+        this.heroRepository = heroRepository;
+    }
 
 
     public Hero createHero(String name) {

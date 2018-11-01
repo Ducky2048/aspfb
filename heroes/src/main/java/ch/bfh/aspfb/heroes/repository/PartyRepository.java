@@ -1,6 +1,6 @@
-package ch.bfh.aspfb.repository;
+package ch.bfh.aspfb.heroes.repository;
 
-import ch.bfh.aspfb.model.Party;
+import ch.bfh.aspfb.heroes.model.Party;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

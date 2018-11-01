@@ -1,4 +1,4 @@
-package ch.bfh.aspfb.model;
+package ch.bfh.aspfb.heroes.model;
 
 import org.hibernate.annotations.GenericGenerator;
 

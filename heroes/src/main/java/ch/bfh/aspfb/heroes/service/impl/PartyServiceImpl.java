@@ -1,9 +1,9 @@
-package ch.bfh.aspfb.services.impl;
+package ch.bfh.aspfb.heroes.service.impl;
 
-import ch.bfh.aspfb.model.Party;
-import ch.bfh.aspfb.repository.PartyRepository;
-import ch.bfh.aspfb.service.HeroService;
-import ch.bfh.aspfb.service.PartyService;
+import ch.bfh.aspfb.heroes.model.Party;
+import ch.bfh.aspfb.heroes.repository.PartyRepository;
+import ch.bfh.aspfb.heroes.service.HeroService;
+import ch.bfh.aspfb.heroes.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
