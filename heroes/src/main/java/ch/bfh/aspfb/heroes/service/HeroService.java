@@ -1,6 +1,6 @@
-package ch.bfh.aspfb.service;
+package ch.bfh.aspfb.heroes.service;
 
-import ch.bfh.aspfb.model.Hero;
+import ch.bfh.aspfb.heroes.model.Hero;
 
 public interface HeroService {
     Hero createHero(String name);
