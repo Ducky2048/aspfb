@@ -1,4 +1,5 @@
 import ch.bfh.aspfb.CampConfig;
+import ch.bfh.aspfb.service.HeroService;
 import ch.bfh.aspfb.service.PartyService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,5 +10,6 @@ public class HelloWorld {
         final PartyService partyService = annotationConfigApplicationContext.getBean(PartyService.class);
         partyService.createParty("döner");
         partyService.createParty("bier");
+        final HeroService heroService = annotationConfigApplicationContext.getBean(HeroService.class);
     }
 }
