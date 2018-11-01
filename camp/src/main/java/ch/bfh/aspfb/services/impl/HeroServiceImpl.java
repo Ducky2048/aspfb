@@ -26,4 +26,9 @@ public class HeroServiceImpl implements HeroService {
         System.out.println(String.format("Created hero: %s", hero.toString()));
         return heroRepository.save(hero);
     }
+
+    @Override
+    public long getStrongHeroCount() {
+        return heroRepository.countHerosByAtkGreaterThan(50);
+    }
 }
