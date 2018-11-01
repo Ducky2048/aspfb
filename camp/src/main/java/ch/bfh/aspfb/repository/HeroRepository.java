@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HeroRepository extends CrudRepository<Hero, String> {
+    long countHerosByAtkGreaterThan(int threshold);
 }
