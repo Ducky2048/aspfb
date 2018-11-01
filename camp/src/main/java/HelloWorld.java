@@ -11,5 +11,6 @@ public class HelloWorld {
         partyService.createParty("döner");
         partyService.createParty("bier");
         final HeroService heroService = annotationConfigApplicationContext.getBean(HeroService.class);
+        System.out.println("There are " + heroService.getStrongHeroCount() + " with more than 50 atk");
     }
 }
