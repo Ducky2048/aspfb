@@ -6,6 +6,7 @@ import ch.bfh.aspfb.heroes.repository.PartyRepository;
 import ch.bfh.aspfb.heroes.service.HeroService;
 import ch.bfh.aspfb.heroes.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @RepositoryRestController
+@Configuration
 public class PartyController {
     @Autowired
     private PartyService partyService;
@@ -31,10 +33,13 @@ public class PartyController {
     private HeroService heroService;
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "dynamicPartyCreation")
+    @RequestMapping(method = RequestMethod.POST, value = "/parties/dynamicPartyCreation")
     public @ResponseBody
     ResponseEntity<Party> dynamicPartyCreation(@RequestBody(required = true) Resource<Party> partyResource) {
         if (partyResource == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        if (partyResource.getContent().getName() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         final Party party = this.partyService.createParty(partyResource.getContent().getName());
