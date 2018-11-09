@@ -7,6 +7,8 @@ import ch.bfh.aspfb.heroes.service.HeroService;
 import ch.bfh.aspfb.heroes.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.webmvc.PersistentEntityResource;
+import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
@@ -35,7 +37,8 @@ public class PartyController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/parties/dynamicPartyCreation")
     public @ResponseBody
-    ResponseEntity<Party> dynamicPartyCreation(@RequestBody(required = true) Resource<Party> partyResource) {
+    ResponseEntity<PersistentEntityResource> dynamicPartyCreation(@RequestBody(required = true) Resource<Party> partyResource,
+                                                                  PersistentEntityResourceAssembler persistentEntityResourceAssembler) {
         if (partyResource == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -48,6 +51,6 @@ public class PartyController {
                 .collect(Collectors.toList());
         party.setMembers(heroes);
         this.partyRepository.save(party);
-        return ResponseEntity.ok(party);
+        return ResponseEntity.ok(persistentEntityResourceAssembler.toResource(party));
     }
 }
