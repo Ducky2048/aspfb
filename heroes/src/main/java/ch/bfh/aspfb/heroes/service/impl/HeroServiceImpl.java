@@ -21,7 +21,7 @@ public class HeroServiceImpl implements HeroService {
     }
 
 
-    public Hero createHero(String name) {
+    public Hero createHero(final String name) {
         final Hero hero = new Hero();
         hero.setName(name);
         hero.setAtk(random.nextInt(100));

@@ -29,26 +29,6 @@ Content-Type: application/json
   "hp": 88
 }
 
-###
-
-GET http://localhost:8080/profile/parties/
-Accept: application/json
 
 ###
 
-GET http://localhost:8080/parties/dynamicPartyCreation/
-Accept: application/json
-
-
-###
-
-POST http://localhost:8080/parties/dynamicPartyCreation/
-Content-Type: application/json
-
-{
-  "name": "lol"
-}
-
-
-
-###
