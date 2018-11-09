@@ -1,0 +1,23 @@
+[
+  {
+    "_class": "ch.bfh.aspfb.heroes.model.Hero",
+    "name": "repositorypopulator hero 0",
+    "atk": 65,
+    "def": 33,
+    "hp": 100
+  },
+  {
+    "_class": "ch.bfh.aspfb.heroes.model.Hero",
+    "name": "repositorypopulator hero 1",
+    "atk": 33,
+    "def": 66,
+    "hp": 100
+  },
+  {
+    "_class": "ch.bfh.aspfb.heroes.model.Hero",
+    "name": "repositorypopulator hero 2",
+    "atk": 78,
+    "def": 21,
+    "hp": 100
+  }
+]
