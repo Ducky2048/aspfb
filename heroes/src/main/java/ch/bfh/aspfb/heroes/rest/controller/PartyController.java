@@ -37,12 +37,10 @@ public class PartyController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/parties/dynamicPartyCreation")
     public @ResponseBody
-    ResponseEntity<PersistentEntityResource> dynamicPartyCreation(@RequestBody(required = true) Resource<Party> partyResource,
-                                                                  PersistentEntityResourceAssembler persistentEntityResourceAssembler) {
-        if (partyResource == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-        if (partyResource.getContent().getName() == null) {
+    ResponseEntity<PersistentEntityResource> dynamicPartyCreation(
+            @RequestBody(required = true) Resource<Party> partyResource,
+            PersistentEntityResourceAssembler persistentEntityResourceAssembler) {
+        if (partyResource == null || partyResource.getContent().getName() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         final Party party = this.partyService.createParty(partyResource.getContent().getName());
