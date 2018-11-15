@@ -1,7 +1,7 @@
 package ch.bfh.aspfb.heroes.service.impl;
 
 import ch.bfh.aspfb.heroes.model.Party;
-import ch.bfh.aspfb.heroes.repository.PartyRepository;
+import ch.bfh.aspfb.heroes.rest.repository.PartyRestRepository;
 import ch.bfh.aspfb.heroes.service.HeroService;
 import ch.bfh.aspfb.heroes.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class PartyServiceImpl implements PartyService {
     private HeroService heroService;
 
     @Autowired
-    private PartyRepository partyRepository;
+    private PartyRestRepository partyRepository;
 
     public Party createParty(String name) {
         final Party party = new Party();
