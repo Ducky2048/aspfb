@@ -40,13 +40,16 @@ public class PartyController {
     ResponseEntity<PersistentEntityResource> dynamicPartyCreation(
             @RequestBody(required = true) Resource<Party> partyResource,
             PersistentEntityResourceAssembler persistentEntityResourceAssembler) {
+
         if (partyResource == null || partyResource.getContent().getName() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+
         final Party party = this.partyService.createParty(partyResource.getContent().getName());
         final List<Hero> heroes = IntStream.range(0, 3)
                 .mapToObj(i -> this.heroService.createHero(String.format("Hero %d for %s", i, party.getName())))
                 .collect(Collectors.toList());
+
         party.setMembers(heroes);
         this.partyRepository.save(party);
         return ResponseEntity.ok(persistentEntityResourceAssembler.toResource(party));
