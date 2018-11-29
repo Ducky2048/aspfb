@@ -1,23 +1,12 @@
-package ch.bfh.aspfb.heroes.model;
+package ch.bfh.aspfb.arena.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.List;
 
-@Entity
 public class Party {
-    @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
 
     private String name;
 
-    @OneToMany
     private List<Hero> members;
 
     @Override

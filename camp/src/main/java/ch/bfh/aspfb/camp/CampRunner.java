@@ -1,20 +1,20 @@
-package ch.bfh.aspfb.heroes;
+package ch.bfh.aspfb.camp;
 
-import ch.bfh.aspfb.heroes.service.HeroService;
-import ch.bfh.aspfb.heroes.service.PartyService;
+import ch.bfh.aspfb.camp.service.HeroService;
+import ch.bfh.aspfb.camp.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HeroRunner implements ApplicationRunner {
+public class CampRunner implements ApplicationRunner {
 
     private final HeroService heroService;
     private final PartyService partyService;
 
     @Autowired
-    public HeroRunner(HeroService heroService, PartyService partyService) {
+    public CampRunner(HeroService heroService, PartyService partyService) {
         this.heroService = heroService;
         this.partyService = partyService;
     }

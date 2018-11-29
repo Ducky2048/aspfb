@@ -1,10 +1,10 @@
-package ch.bfh.aspfb.heroes.rest.controller;
+package ch.bfh.aspfb.camp.rest.controller;
 
-import ch.bfh.aspfb.heroes.model.Hero;
-import ch.bfh.aspfb.heroes.model.Party;
-import ch.bfh.aspfb.heroes.rest.repository.PartyRestRepository;
-import ch.bfh.aspfb.heroes.service.HeroService;
-import ch.bfh.aspfb.heroes.service.PartyService;
+import ch.bfh.aspfb.camp.model.Hero;
+import ch.bfh.aspfb.camp.model.Party;
+import ch.bfh.aspfb.camp.rest.repository.PartyRestRepository;
+import ch.bfh.aspfb.camp.service.HeroService;
+import ch.bfh.aspfb.camp.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.PersistentEntityResource;
