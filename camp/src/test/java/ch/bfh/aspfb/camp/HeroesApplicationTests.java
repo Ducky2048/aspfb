@@ -1,4 +1,4 @@
-package ch.bfh.aspfb.heroes;
+package ch.bfh.aspfb.camp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

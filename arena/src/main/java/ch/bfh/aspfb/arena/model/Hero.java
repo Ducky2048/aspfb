@@ -1,22 +1,12 @@
-package ch.bfh.aspfb.heroes.model;
+package ch.bfh.aspfb.arena.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 public class Hero {
-    @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
 
     private String name;
     private int atk;
     private int def;
-    private int hp;
+    private double hp;
 
     @Override
     public String toString() {
@@ -52,11 +42,11 @@ public class Hero {
         this.def = def;
     }
 
-    public int getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHp(double hp) {
         this.hp = hp;
     }
 }
