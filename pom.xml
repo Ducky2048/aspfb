@@ -17,7 +17,7 @@
     </parent>
 
     <modules>
-        <module>heroes</module>
+        <module>camp</module>
     </modules>
 
 
