@@ -9,6 +9,13 @@ public class Party {
 
     private List<Hero> members;
 
+    public Party() {
+    }
+
+    public Party(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Party{" +

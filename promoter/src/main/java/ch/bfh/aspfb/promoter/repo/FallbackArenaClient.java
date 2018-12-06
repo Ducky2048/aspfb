@@ -9,16 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Component
-public class DefaultArenaClient implements ArenaClient {
+public class FallbackArenaClient implements ArenaClient {
 
     @Override
     public String battle(List<Party> challangers) {
-        ResponseEntity<String> response = new RestTemplate().exchange(
-                "http://localhost:8083/battle",
-                HttpMethod.POST,
-                new HttpEntity<>(challangers),
-                String.class);
-        return response.getBody();
+        return "The fight is a draw since the arena is closed. come back tomorrow";
     }
 }
