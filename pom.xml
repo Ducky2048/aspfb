@@ -18,6 +18,7 @@
 
     <modules>
         <module>camp</module>
+        <module>promoter</module>
     </modules>
 
 
