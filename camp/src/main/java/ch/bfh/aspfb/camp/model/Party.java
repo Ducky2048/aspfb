@@ -1,6 +1,7 @@
 package ch.bfh.aspfb.camp.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Party {
+public class Party extends ResourceSupport  {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
