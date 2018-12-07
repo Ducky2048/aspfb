@@ -1,0 +1,295 @@
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T012830.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=fubar
+Accept: application/json+hal
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=fubar
+Accept: application/json+hal
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=fubar
+Accept: */*
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=
+Accept: */*
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: */*
+
+<> 2018-12-07T012650.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T012621.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=fuck
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=fuck
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T012428.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T012413.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=hitler
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=hitler
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=hitler
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T012024.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T011759.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T011600.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=hitler
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T011531.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=test
+Accept: application/hal+json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation
+Accept: application/hal+json
+
+<> 2018-12-07T011518.400.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=test
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation&name=test
+
+<> 2018-12-07T011432.500.json
+
+###
+
+GET http://localhost:8081/parties/dynamicPartyCreation?name=test
+
+###
+
+GET http://localhost:8081/dynamicPartyCreation?name=test
+
+<> 2018-12-07T011411.404.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T011322.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T011230.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T010855.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T112552.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T112525.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T111844.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T111751.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T110544.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T110526.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T110328.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T105929.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T105843.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T105315.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T105248.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104511.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104332.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104215.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104137.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104113.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104057.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104048.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T104039.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T103937.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T103651.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
+<> 2018-12-07T103559.500.json
+
+###
+
