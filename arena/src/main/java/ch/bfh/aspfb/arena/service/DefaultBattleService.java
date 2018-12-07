@@ -2,6 +2,7 @@ package ch.bfh.aspfb.arena.service;
 
 import ch.bfh.aspfb.arena.model.Hero;
 import ch.bfh.aspfb.arena.model.Party;
+import org.apache.commons.lang.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,11 @@ public class DefaultBattleService implements BattleService {
 
     @Override
     public String battle(Party challengeeParty, Party challengerParty) {
+
+        Validate.notNull(challengeeParty);
+        Validate.notNull(challengerParty);
+        Validate.notNull(challengeeParty.getMembers());
+        Validate.notNull(challengerParty.getMembers());
 
         List<Hero> challengees = new ArrayList<>(challengeeParty.getMembers());
         List<Hero> challengers = new ArrayList<>(challengerParty.getMembers());

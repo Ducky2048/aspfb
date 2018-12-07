@@ -5,26 +5,28 @@ import ch.bfh.aspfb.camp.model.Party;
 import ch.bfh.aspfb.camp.rest.repository.PartyRestRepository;
 import ch.bfh.aspfb.camp.service.HeroService;
 import ch.bfh.aspfb.camp.service.PartyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.rest.webmvc.PersistentEntityResource;
-import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
-import org.springframework.hateoas.Resource;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 @RepositoryRestController
 @Configuration
 public class PartyController {
+    private static final Logger logger = LoggerFactory.getLogger(PartyController.class);
+
     @Autowired
     private PartyService partyService;
 
@@ -34,24 +36,25 @@ public class PartyController {
     @Autowired
     private HeroService heroService;
 
+    @Autowired
+    private RepositoryEntityLinks entityLinks;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/parties/dynamicPartyCreation")
-    public @ResponseBody
-    ResponseEntity<PersistentEntityResource> dynamicPartyCreation(
-            @RequestBody Resource<Party> partyResource,
-            PersistentEntityResourceAssembler persistentEntityResourceAssembler) {
 
-        if (partyResource == null || partyResource.getContent().getName() == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
+    @RequestMapping(method = RequestMethod.GET, value = "/parties/dynamicPartyCreation")
+    public Party dynamicPartyCreation(@NonNull @RequestParam final String name) {
 
-        final Party party = this.partyService.createParty(partyResource.getContent().getName());
-        final List<Hero> heroes = IntStream.range(0, 3)
+        final Party party = this.partyService.createParty(name);
+
+        party.add(linkTo(methodOn(PartyController.class).dynamicPartyCreation(name)).withSelfRel());
+
+        party.setMembers(
+                IntStream.range(0, 3)
                 .mapToObj(i -> this.heroService.createHero(String.format("Hero %d for %s", i, party.getName())))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+        );
 
-        party.setMembers(heroes);
-        this.partyRepository.save(party);
-        return ResponseEntity.ok(persistentEntityResourceAssembler.toResource(party));
+        party.getMembers().forEach(h -> party.add(this.entityLinks.linkToSingleResource(Hero.class, h.getId())));
+        return party;
+
     }
 }
