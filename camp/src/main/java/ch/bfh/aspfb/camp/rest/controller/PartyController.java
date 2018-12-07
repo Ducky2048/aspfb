@@ -12,8 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.lang.NonNull;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.stream.Collectors;
@@ -40,7 +39,7 @@ public class PartyController {
     private RepositoryEntityLinks entityLinks;
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/parties/dynamicPartyCreation")
+    @GetMapping(value = "/parties/dynamicPartyCreation")
     public Party dynamicPartyCreation(@NonNull @RequestParam final String name) {
 
         final Party party = this.partyService.createParty(name);
