@@ -53,7 +53,7 @@ public class PartyController {
                 .collect(Collectors.toList())
         );
 
-        party.getMembers().forEach(h -> party.add(this.entityLinks.linkToSingleResource(Hero.class, h.getId())));
+        party.getMembers().forEach(h -> party.add(this.entityLinks.linkToSingleResource(Hero.class, h.getId()).withSelfRel()));
         return party;
 
     }
