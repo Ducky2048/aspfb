@@ -1,3 +1,8 @@
+PUT http://localhost:8081/{repository}/{id}
+Accept: application/hal+json
+
+###
+
 GET http://localhost:8082/promoteFight
 
 <> 2018-12-08T032229.500.json
@@ -294,13 +299,6 @@ Accept: application/hal+json
 
 GET http://localhost:8081/parties/dynamicPartyCreation?name=hitler
 Accept: application/hal+json
-
-###
-
-GET http://localhost:8081/parties/dynamicPartyCreation
-Accept: application/hal+json
-
-<> 2018-12-07T011531.400.json
 
 ###
 

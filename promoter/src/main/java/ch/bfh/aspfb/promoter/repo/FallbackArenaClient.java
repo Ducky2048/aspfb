@@ -1,14 +1,10 @@
 package ch.bfh.aspfb.promoter.repo;
 
 import ch.bfh.aspfb.promoter.model.Party;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-
 import java.util.List;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FallbackArenaClient implements ArenaClient {
 
     @Override

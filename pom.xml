@@ -28,6 +28,7 @@
         <module>camp</module>
         <module>promoter</module>
         <module>service-discovery</module>
+        <module>frontend</module>
     </modules>
 
     <dependencyManagement>
