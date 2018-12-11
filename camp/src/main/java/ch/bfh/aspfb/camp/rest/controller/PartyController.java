@@ -2,8 +2,6 @@ package ch.bfh.aspfb.camp.rest.controller;
 
 import ch.bfh.aspfb.camp.model.Hero;
 import ch.bfh.aspfb.camp.model.Party;
-import ch.bfh.aspfb.camp.rest.repository.PartyRestRepository;
-import ch.bfh.aspfb.camp.service.HeroService;
 import ch.bfh.aspfb.camp.service.PartyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,12 +21,6 @@ public class PartyController {
 
     @Autowired
     private PartyService partyService;
-
-    @Autowired
-    private PartyRestRepository partyRepository;
-
-    @Autowired
-    private HeroService heroService;
 
     @Autowired
     private RepositoryEntityLinks entityLinks;
