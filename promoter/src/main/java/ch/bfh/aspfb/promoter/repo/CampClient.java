@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "camp", fallback = CampClientFallback.class)
 public interface CampClient {
 
-    @GetMapping(value = "/dynamicPartyCreation")
+    @GetMapping(value = "/parties/dynamicPartyCreation")
     Party createParty(@RequestParam("name") final String name);
 }
