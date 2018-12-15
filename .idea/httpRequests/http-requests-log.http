@@ -5,6 +5,12 @@ Accept: application/hal+json
 
 GET http://localhost:8082/promoteFight
 
+<> 2018-12-08T032815.500.json
+
+###
+
+GET http://localhost:8082/promoteFight
+
 <> 2018-12-08T032229.500.json
 
 ###
