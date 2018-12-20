@@ -1,8 +1,12 @@
 package ch.bfh.aspfb.promoter.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Party {
+
+    @JsonProperty("partyId")
     private String id;
 
     private String name;
@@ -38,5 +42,9 @@ public class Party {
 
     public void setMembers(List<Hero> members) {
         this.members = members;
+    }
+
+    public String getId() {
+        return id;
     }
 }

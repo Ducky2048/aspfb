@@ -1,5 +1,6 @@
 package ch.bfh.aspfb.camp.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ public class Party {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @JsonProperty("partyId")
     private String id;
 
     private String name;
