@@ -1,5 +1,6 @@
 package ch.bfh.aspfb.camp.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ public class Hero {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @JsonProperty("heroId")
     private String id;
 
     private String name;

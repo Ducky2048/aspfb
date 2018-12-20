@@ -22,7 +22,6 @@ import java.util.List;
 
 @Repository
 public class DefaultCampRepo implements CampRepo {
-    private final Logger log = LoggerFactory.getLogger(CampRepo.class);
 
     private final CampClient campClient;
 
@@ -35,22 +34,8 @@ public class DefaultCampRepo implements CampRepo {
     public Party createParty(String name) {
         Resource<Party> partyResource = campClient.createParty(name);
         Party party = partyResource.getContent();
-        if (party.getMembers() != null)
-            return party;
-        Resources<Hero> partyMembers = campClient.getPartyMembers(party.getId());
-        log.info("Members for party {} are: {}", party.getId(), partyMembers);
-        List<Hero> members = new ArrayList(partyMembers.getContent());
-//        List<Hero> members = getMembers(partyResource);
+        List<Hero> members = new ArrayList<>(campClient.getPartyMembers(party.getId()).getContent());
         party.setMembers(members);
         return party;
     }
-
-//    private List<Hero> getMembers(Resource<Party> party) {
-//        Link memberLink = party.getLink("members");
-//        if(memberLink == null)
-//            return Collections.emptyList();
-//        ResponseEntity<Resources<Hero>> memberResources = restTemplate.exchange(memberLink.getHref(), HttpMethod.GET,
-//                HttpEntity.EMPTY, new ParameterizedTypeReference<Resources<Hero>>() {});
-//        return new ArrayList<>(memberResources.getBody().getContent());
-//    }
 }

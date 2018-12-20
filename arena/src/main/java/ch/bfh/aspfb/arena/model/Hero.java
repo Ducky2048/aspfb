@@ -1,6 +1,9 @@
 package ch.bfh.aspfb.arena.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Hero {
+    @JsonProperty("heroId")
     private String id;
 
     private String name;

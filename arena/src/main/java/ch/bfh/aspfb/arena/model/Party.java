@@ -1,8 +1,11 @@
 package ch.bfh.aspfb.arena.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Party {
+    @JsonProperty("partyId")
     private String id;
 
     private String name;
