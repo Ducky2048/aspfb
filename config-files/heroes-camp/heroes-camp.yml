@@ -1,0 +1,20 @@
+# Use this file for final configuration. Note that the changes will be available to the applications only after pushing.
+
+spring:
+  jpa:
+    propertes:
+      show_sql: true
+      format_sql: true
+    show-sql: true
+  data:
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka

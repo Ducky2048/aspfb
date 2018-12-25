@@ -1,0 +1,15 @@
+# Use this file for final configuration. Note that the changes will be available to the applications only after pushing.
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+
+zuul:
+  routes:
+    heroes-camp: /camp/**
+    heroes-arena: /arena/**
+    heroes-promoter: /promoter/**
