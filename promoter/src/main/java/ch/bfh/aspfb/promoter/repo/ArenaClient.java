@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(value = "arena", fallback = FallbackArenaClient.class)
+@FeignClient(value = "heroes-arena", fallback = FallbackArenaClient.class)
 public interface ArenaClient {
 
     @PostMapping(value = "/battle")
