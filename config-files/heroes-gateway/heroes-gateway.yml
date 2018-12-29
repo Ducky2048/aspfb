@@ -13,3 +13,12 @@ zuul:
     heroes-camp: /camp/**
     heroes-arena: /arena/**
     heroes-promoter: /promoter/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - refresh

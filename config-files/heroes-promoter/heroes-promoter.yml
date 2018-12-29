@@ -17,3 +17,8 @@ management:
     web:
       exposure:
         include: "*"
+
+heroes:
+  promoter:
+    messages:
+      arena-fallback: The fight is a draw since the arena is closed. Come back tomorrow.

@@ -7,3 +7,18 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8090/eureka
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - refresh
+
+heroes:
+  arena:
+    messages:
+      victory-message: The winner of the battle between %s and '%s' was '%s'!
