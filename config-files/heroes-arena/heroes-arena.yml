@@ -21,4 +21,4 @@ management:
 heroes:
   arena:
     messages:
-      victory-message: The winner of the battle between %s and '%s' was '%s'!
+      victory-message: The winner of the battle between '%s' and '%s' was '%s'!
