@@ -1,10 +1,13 @@
 package ch.bfh.aspfb.arena.service;
 
+import ch.bfh.aspfb.arena.model.Fight;
 import ch.bfh.aspfb.arena.model.Hero;
 import ch.bfh.aspfb.arena.model.Party;
+import ch.bfh.aspfb.arena.repo.ArchiveClient;
 import org.apache.commons.lang.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
@@ -16,6 +19,9 @@ public class DefaultBattleService implements BattleService {
 
     private static final Logger LOG = LoggerFactory.getLogger(DefaultBattleService.class);
     private static final DecimalFormat f = new DecimalFormat("##.00");
+
+    @Autowired
+    private ArchiveClient archiveClient;
 
     @Override
     public String battle(Party challengeeParty, Party challengerParty) {
@@ -29,6 +35,7 @@ public class DefaultBattleService implements BattleService {
         List<Hero> challengers = new ArrayList<>(challengerParty.getMembers());
 
         LOG.info("Party '" + challengeeParty.getName() + "' fights against party '" + challengerParty.getName() + "'.");
+        Fight fight = new Fight(challengerParty, challengeeParty);
 
         int duelCount;
         int roundCount = 0;
@@ -66,11 +73,15 @@ public class DefaultBattleService implements BattleService {
             // check if a party has already lost (no members left), return the winners party name
             if (challengees.isEmpty()) {
                 LOG.info("Party '" + challengerParty.getName() + "' wins this battle in " + roundCount + " rounds.");
+                fight.setWinner(challengerParty.getName());
+                archiveClient.archiveFight(fight);
                 return challengerParty.getName();
             }
 
             if (challengers.isEmpty()) {
                 LOG.info("Party '" + challengeeParty.getName() + "' wins this battle in " + roundCount + " rounds.");
+                fight.setWinner(challengeeParty.getName());
+                archiveClient.archiveFight(fight);
                 return challengeeParty.getName();
             }
         }

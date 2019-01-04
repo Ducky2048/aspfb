@@ -24,6 +24,7 @@
         <module>service-discovery</module>
         <module>frontend</module>
         <module>config-server</module>
+        <module>archive</module>
     </modules>
 
     <dependencyManagement>

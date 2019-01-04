@@ -13,6 +13,7 @@ zuul:
     heroes-camp: /camp/**
     heroes-arena: /arena/**
     heroes-promoter: /promoter/**
+    heroes-archive: /archive/**
 
 management:
   endpoints:

@@ -1,0 +1,22 @@
+spring:
+  data:
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - refresh
