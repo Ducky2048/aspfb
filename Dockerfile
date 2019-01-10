@@ -12,5 +12,7 @@ FROM openjdk:8-jre-alpine3.8
 VOLUME /tmp
 ARG MODULE
 ARG JAR=/workspace/app/$MODULE/target/*.jar
+
+COPY config-files /app/
 COPY --from=build ${JAR} /app/app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]
