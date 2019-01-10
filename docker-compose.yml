@@ -3,31 +3,37 @@ version: "3"
 services:
   configserver:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: config-server
   service-discovery:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: service-discovery
   frontend:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: frontend
   arena:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: arena
   camp:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: camp
   promoter:
     build:
+      context: ./
       dockerfile: Dockerfile
       args:
         MODULE: promoter
