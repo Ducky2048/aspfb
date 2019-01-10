@@ -11,8 +11,9 @@ RUN mvn install -pl $MODULE -am
 FROM openjdk:8-jre-alpine3.8
 VOLUME /tmp
 ARG MODULE
-ARG JAR=/workspace/app/$MODULE/target/*.jar
+ARG VERSION=0.0.1
+ARG JAR=/workspace/app/$MODULE/target/$MODULE-$VERSION-SNAPSHOT.jar
 
-COPY config-files /app/
+COPY config-files /app/config-files
 COPY --from=build ${JAR} /app/app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]
