@@ -67,3 +67,7 @@ services:
     #        VERSION: 1.0
     expose:
       - "8084"
+
+networks:
+  default:
+    driver: bridge
