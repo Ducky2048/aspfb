@@ -2,7 +2,6 @@ FROM maven:3.6.0-jdk-8-alpine as build
 WORKDIR /workspace/app
 
 COPY . .
-RUN mvn dependency:resolve
 
 ARG MODULE
 
