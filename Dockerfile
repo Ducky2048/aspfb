@@ -6,7 +6,7 @@ RUN mvn dependency:resolve
 
 ARG MODULE
 
-RUN mvn install -pl $MODULE -am
+RUN mvn package spring-boot:repackage -pl $MODULE -am
 
 FROM openjdk:8-jre-alpine3.8
 VOLUME /tmp
