@@ -27,15 +27,21 @@ services:
       dockerfile: Dockerfile
       args:
         MODULE: arena
+    expose:
+      - "8083"
   camp:
     build:
       context: ./
       dockerfile: Dockerfile
       args:
         MODULE: camp
+    expose:
+      - "8081"
   promoter:
     build:
       context: ./
       dockerfile: Dockerfile
       args:
         MODULE: promoter
+    expose:
+      - "8082"
