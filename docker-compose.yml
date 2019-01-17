@@ -2,60 +2,68 @@ version: "3"
 
 services:
   configserver:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: config-server
-        VERSION: 1.0
+    image: izolight/aspbf-config-server:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: config-server
+    #        VERSION: 1.0
     expose:
       - "8091"
   service-discovery:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: service-discovery
+    image: izolight/aspbf-service-discovery:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: service-discovery
     expose:
       - "8090"
   frontend:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: frontend
-        VERSION: 1.0
+    image: izolight/aspbf-frontend:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: frontend
+    #        VERSION: 1.0
     expose:
       - "8080"
   arena:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: arena
+    image: izolight/aspbf-arena:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: arena
     expose:
       - "8083"
   camp:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: camp
+    image: izolight/aspbf-camp:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: camp
     expose:
       - "8081"
   promoter:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: promoter
+    image: izolight/aspbf-promoter:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: promoter
     expose:
       - "8082"
   archive:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        MODULE: archive
+    image: izolight/aspbf-service-discovery:1
+    #    build:
+    #      context: ./
+    #      dockerfile: Dockerfile
+    #      args:
+    #        MODULE: archive
+    #        VERSION: 1.0
     expose:
       - "8084"
