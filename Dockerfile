@@ -29,4 +29,7 @@ ARG JAR=/workspace/app/$MODULE/target/$MODULE-$VERSION-SNAPSHOT.jar
 
 COPY config-files /app/config-files
 COPY --from=build ${JAR} /app/app.jar
-ENTRYPOINT ["java", "-Deureka.client.serviceUrl.defaultZone=http://service-discovery:8090/eureka/", "-jar","/app/app.jar"]
+COPY entrypoint.sh /app/entrypoint.sh
+
+ENV MOD=${MODULE}
+CMD ["/app/entrypoint.sh"]
