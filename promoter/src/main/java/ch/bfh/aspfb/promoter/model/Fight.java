@@ -1,4 +1,4 @@
-package ch.bfh.aspfb.arena.model;
+package ch.bfh.aspfb.promoter.model;
 
 public class Fight {
     private String id;
@@ -8,9 +8,10 @@ public class Fight {
 
     private String winner;
 
-    public Fight(Party challenger, Party challengee) {
+    public Fight(Party challenger, Party challengee, String winner) {
         this.challenger = challenger;
         this.challengee = challengee;
+        this.winner = winner;
     }
 
     @Override

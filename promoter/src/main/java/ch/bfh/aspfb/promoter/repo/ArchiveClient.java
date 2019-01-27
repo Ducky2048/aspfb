@@ -1,6 +1,7 @@
-package ch.bfh.aspfb.arena.repo;
+package ch.bfh.aspfb.promoter.repo;
 
-import ch.bfh.aspfb.arena.model.Fight;
+
+import ch.bfh.aspfb.promoter.model.Fight;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,8 @@
 package ch.bfh.aspfb.promoter.service;
 
+import ch.bfh.aspfb.promoter.model.Fight;
 import ch.bfh.aspfb.promoter.model.Party;
+import ch.bfh.aspfb.promoter.repo.ArchiveClient;
 import ch.bfh.aspfb.promoter.repo.ArenaClient;
 import ch.bfh.aspfb.promoter.repo.CampRepo;
 import org.slf4j.Logger;
@@ -21,6 +23,9 @@ public class DefaultPromoterService implements PromoterService {
     @Autowired
     private ArenaClient arenaClient;
 
+    @Autowired
+    private ArchiveClient archiveClient;
+
     @Override
     public String promoteFight() {
         Party challengee = campRepo.createParty("Challengee");
@@ -33,7 +38,8 @@ public class DefaultPromoterService implements PromoterService {
         challangers.add(challenger);
         String winner = arenaClient.battle(challangers);
         LOG.info("And the winner is: Party '" + winner + "'");
-
+        archiveClient.archiveFight(new Fight(challenger, challengee, winner));
+        LOG.info("Archived fight in the archive");
         return winner;
     }
 }
