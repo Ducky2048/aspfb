@@ -2,7 +2,7 @@ version: "3"
 
 services:
   configserver:
-    image: izolight/aspbf-config-server:4
+    image: izolight/aspbf-config-server:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
     ports:
       - "8091:8091"
   service-discovery:
-    image: izolight/aspbf-service-discovery:4
+    image: izolight/aspbf-service-discovery:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -26,7 +26,7 @@ services:
     ports:
       - "8090:8090"
   frontend:
-    image: izolight/aspbf-frontend:4
+    image: izolight/aspbf-frontend:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -41,7 +41,7 @@ services:
       - configserver
       - service-discovery
   arena:
-    image: izolight/aspbf-arena:4
+    image: izolight/aspbf-arena:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -54,7 +54,7 @@ services:
       - configserver
       - service-discovery
   camp:
-    image: izolight/aspbf-camp:4
+    image: izolight/aspbf-camp:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -67,7 +67,7 @@ services:
       - configserver
       - service-discovery
   promoter:
-    image: izolight/aspbf-promoter:4
+    image: izolight/aspbf-promoter:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile
@@ -80,7 +80,7 @@ services:
       - configserver
       - service-discovery
   archive:
-    image: izolight/aspbf-archive:4
+    image: izolight/aspbf-archive:5
     #    build:
     #      context: ./
     #      dockerfile: Dockerfile

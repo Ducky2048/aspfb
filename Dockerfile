@@ -22,7 +22,6 @@ COPY ./$MODULE ./$MODULE
 RUN mvn package spring-boot:repackage -pl $MODULE -am
 
 FROM openjdk:8-jre-alpine3.8
-VOLUME /tmp
 ARG MODULE
 ARG VERSION
 ARG JAR=/workspace/app/$MODULE/target/$MODULE-$VERSION-SNAPSHOT.jar
@@ -31,5 +30,10 @@ COPY config-files /app/config-files
 COPY --from=build ${JAR} /app/app.jar
 COPY entrypoint.sh /app/entrypoint.sh
 
+# Create a group and user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup \
+	&& chown appuser.appgroup /app
+
+USER appuser
 ENV MOD=${MODULE}
 CMD ["/app/entrypoint.sh"]
