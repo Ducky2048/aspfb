@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 if [[ "$MOD" != "config-server" && "$MOD" != "service-discovery" ]];
 then
